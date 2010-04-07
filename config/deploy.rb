@@ -1,7 +1,7 @@
 #========================
 #CONFIG
 #========================
-set :application, "209.41.75.6"
+set :application, "hcirack"
 set :deploy_to, "/var/www/iphoneapps/sinatra_base"
 set :scm, :git
 set :repository, "git@github.com:electricgraffitti/sinatra_test.git"
