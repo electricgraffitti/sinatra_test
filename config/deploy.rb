@@ -2,7 +2,9 @@
 #CONFIG
 #========================
 set :application, "hcirack"
-set :deploy_to, "/var/www/iphoneapps/sinatra_base"
+set :base_folder "iphoneapps"
+set :app_name "sinatra_base"
+set :deploy_to, "/var/www/#{base_folder}/#{app_name}"
 set :scm, :git
 set :repository, "git@github.com:electricgraffitti/sinatra_test.git"
 set :branch, "master"
