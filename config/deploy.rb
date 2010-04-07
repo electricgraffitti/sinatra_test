@@ -1,4 +1,5 @@
 set :application, "sinatra_app_base"
+set :server, "hcirack"
 set :domain, 'hciapps.com'
 set :deploy_to, "/var/www/apps/sinatraapps/#{application}"
 set :repository, "git@github.com:electricgraffitti/sinatra_test.git"
@@ -9,7 +10,7 @@ set :scm, :git
 set :ssh_options, { :forward_agent => true }
 set :use_sudo, false
 
-role :app, "hcirack"
+role :app, "#{server}"
 role :web, "#{application}"
 role :db, "#{application}", :primary => true
 
