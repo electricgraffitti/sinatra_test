@@ -7,7 +7,7 @@ set :user, "rails"
 
 set :scm, :git
 set :ssh_options, { :forward_agent => true }
-set :use_sudo, false
+set :use_sudo, true
 
 role :app, "#{app}"
 role :web, "#{app}"
