@@ -6,10 +6,10 @@ set :deploy_to, "/var/www/iphoneapps/sinatra_base"
 set :scm, :git
 set :repository, "git@github.com:electricgraffitti/sinatra_test.git"
 set :branch, "master"
-set :user, "root"
+set :user, "rails"
 
 set :ssh_options, { :forward_agent => true }
-set :use_sudo, false
+set :use_sudo, true
 #========================
 #ROLES
 #========================
