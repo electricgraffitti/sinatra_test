@@ -1,12 +1,12 @@
 #========================
 #CONFIG
 #========================
-set :application, "hcirack"
+set :application, "209.41.75.6"
 set :deploy_to, "/var/www/iphoneapps/sinatra_base"
 set :scm, :git
 set :repository, "git@github.com:electricgraffitti/sinatra_test.git"
 set :branch, "master"
-set :user, "rails"
+set :user, "root"
 
 set :ssh_options, { :forward_agent => true }
 set :use_sudo, false
