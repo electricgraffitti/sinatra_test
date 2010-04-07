@@ -1,4 +1,5 @@
-set :application, "hcirack"
+set :application, "sinatra_app_base"
+set :domain, 'hciapps.com'
 set :deploy_to, "/var/www/apps/sinatraapps/#{application}"
 set :repository, "git@github.com:electricgraffitti/sinatra_test.git"
 set :branch, "master"
