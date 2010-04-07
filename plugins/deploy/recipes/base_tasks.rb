@@ -1,12 +1,12 @@
 namespace :setup do
 
-  desc "Set Permissions on deploy directories"
-  task :default, :roles => :app do
-    run "chown -R #{user}:#{user} /var/www/#{base_app}/#{app_name}"
-    run "chown -R #{user}:#{user} /var/www/#{base_app}/#{app_name}/shared",
-    run "chown -R #{user}:#{user} /var/www/#{base_app}/#{app_name}/shared/config",
-    run "chown -R #{user}:#{user} /var/www/#{base_app}/#{app_name}/releases"
-  end
+  # desc "Set Permissions on deploy directories"
+  # task :default, :roles => :app do
+  #   run "chown -R #{user}:#{user} /var/www/#{base_app}/#{app_name}"
+  #   run "chown -R #{user}:#{user} /var/www/#{base_app}/#{app_name}/shared",
+  #   run "chown -R #{user}:#{user} /var/www/#{base_app}/#{app_name}/shared/config",
+  #   run "chown -R #{user}:#{user} /var/www/#{base_app}/#{app_name}/releases"
+  # end
   
   after "deploy:setup", "base:install_dependencies" 
 end

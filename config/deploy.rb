@@ -1,23 +1,22 @@
 #========================
 #CONFIG
 #========================
-set :application, "hcirack"
+server "hcirack", :app, :web, :db, :primary => true
+set :user, "rails"
 set :base_folder, "iphoneapps"
 set :app_name, "sinatra_base"
-set :deploy_to, "/var/www/#{base_folder}/#{app_name}"
+
+set :owner, "rails"
+
 set :scm, :git
 set :repository, "git@github.com:electricgraffitti/sinatra_test.git"
 set :branch, "master"
-set :user, "rails"
+
+set :deploy_to, "/var/www/#{base_folder}/#{app_name}"
 
 set :ssh_options, { :forward_agent => true }
 set :use_sudo, false
-#========================
-#ROLES
-#========================
-role :app, "#{application}"
-role :web, "#{application}"
-role :db, "#{application}", :primary => true
+
 #========================
 #CUSTOM
 #========================
