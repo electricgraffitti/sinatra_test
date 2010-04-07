@@ -28,8 +28,7 @@ namespace :base_app do
     sudo "chown -R #{user}:#{user} #{deploy_to}"
   end
 
-  # Internal tasks that sets the ownership to the 'live' user.
-  # This is the user account that the application runs as on the server.
+  # Sets permissions
   # We set this after deployment completes.
   task :set_post_deploy_ownership do
     sudo "chown -R #{user}:#{user} #{deploy_to}"
