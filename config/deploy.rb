@@ -16,6 +16,15 @@ set :deploy_to, "/var/www/#{base_folder}/#{app_name}"
 set :ssh_options, { :forward_agent => true }
 set :use_sudo, false
 
+
+# Callbacks
+after "deploy:setup", "base_app:set_post_deploy_ownership"
+after "deploy:setup", "base_app:install_dependencies" 
+after "deploy:cold", "base_app:set_post_deploy_ownership"
+after "deploy:cold", "base_app:update_git_permissions"
+before "deploy", "base_app:set_pre_deploy_ownership"
+after "deploy", "base_app:set_post_deploy_ownership"
+
 #========================
 #CUSTOM
 #========================
