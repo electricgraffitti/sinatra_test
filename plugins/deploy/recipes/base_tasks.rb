@@ -32,7 +32,10 @@ namespace :base_app do
   # This is the user account that the application runs as on the server.
   # We set this after deployment completes.
   task :set_post_deploy_ownership do
-    sudo "chown -R #{owner}:#{owner} #{deploy_to}"
+    sudo "chown -R #{user}:#{user} #{deploy_to}"
+    sudo "chown -R #{user}:#{user} #{deploy_to}/shared"
+    sudo "chown -R #{user}:#{user} #{deploy_to}/shared/config"
+    sudo "chown -R #{user}:#{user} #{deploy_to}/releases"
   end
 
 end
