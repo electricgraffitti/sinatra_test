@@ -9,7 +9,7 @@ set :branch, "master"
 set :user, "rails"
 
 set :ssh_options, { :forward_agent => true }
-set :use_sudo, true
+set :use_sudo, false
 #========================
 #ROLES
 #========================
