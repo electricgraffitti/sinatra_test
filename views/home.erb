@@ -1,0 +1,15 @@
+<div class='current' id='home'>
+  <div class='toolbar'>
+    <h1>Dashboard</h1>
+  </div>
+  <ul class='rounded'>
+    <% services.each do |s| %>
+    <li class='arrow'><a href='/service/<%= s.id %>'><%= s.title %></a></li>
+    <% end %>
+  </ul>
+  <div class='info'>
+    <p>
+      Built by HealthCare Insight
+    </p>
+  </div>
+</div>
