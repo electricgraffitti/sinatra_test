@@ -20,6 +20,7 @@ role :db, "#{application}", :primary => true
 #CUSTOM
 #========================
 namespace :deploy do
+  
   task :start, :roles => :app do
     run "touch #{current_release}/tmp/restart.txt"
   end
