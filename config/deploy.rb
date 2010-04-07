@@ -9,7 +9,7 @@ set :scm, :git
 set :ssh_options, { :forward_agent => true }
 set :use_sudo, false
 
-role :app, "#{application}"
+role :app, "hcirack"
 role :web, "#{application}"
 role :db, "#{application}", :primary => true
 
