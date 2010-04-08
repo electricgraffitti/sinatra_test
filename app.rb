@@ -3,13 +3,37 @@ $LOAD_PATH.unshift File.dirname(__FILE__) + '/sinatra/lib'
 require "rubygems"
 require "sinatra"
 require 'active_resource'
+require 'sinatra/activerecord'
+#require 'paperclip'
 
 # Env Settings
-# Time.zone = "Pacific Time (US & Canada)"
-# ActiveRecord::Base.time_zone_aware_attributes = true
-# ActiveRecord::Base.default_timezone = "Pacific Time (US & Canada)"
+Time.zone = "Pacific Time (US & Canada)"
+ActiveRecord::Base.time_zone_aware_attributes = true
+ActiveRecord::Base.default_timezone = "Pacific Time (US & Canada)"
 
 # Set DB connection
+
+  # configure :development do
+  #   ActiveRecord::Base.establish_connection(
+  #     :adapter => 'mysql',
+  #     :username => 'root',
+  #     :password => '',
+  #     :database => 'cube_production',
+  #     :host => '216.194.127.243',
+  #     :encoding => 'utf8'
+  #   )
+  # end
+  # 
+  # configure :production do
+  #   ActiveRecord::Base.establish_connection(
+  #     :adapter => 'mysql',
+  #     :username => 'root',
+  #     :password => '',
+  #     :database => 'cube_production',
+  #     :host => '216.194.127.243',
+  #     :encoding => 'utf8'
+  #   )
+  # end
 
 
 # Establish the Object
@@ -27,6 +51,6 @@ get "/blog" do
 end
 
 get "/blog_post/:id" do
-  @posts = Blog.find(:all)
+  @post = Blog.find(params[:id])
   erb :blog_post, :locals => {:post => @post}
 end
