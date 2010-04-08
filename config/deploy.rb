@@ -4,6 +4,7 @@
 set :user, "rails"
 set :base_folder, "iphoneapps"
 set :app_name, "sinatra_base"
+set :domain, "articles.hciapps.com"
 
 set :scm, :git
 set :repository, "git@github.com:electricgraffitti/sinatra_test.git"
@@ -14,9 +15,9 @@ set :deploy_to, "/var/www/#{base_folder}/#{app_name}"
 set :ssh_options, { :forward_agent => true }
 set :use_sudo, true
 
-set :port, "9191"
+# set :port, "9191"
 
-server "209.41.75.6", :app, :web, :db, :primary => true
+server "#{domain}", :app, :web, :db, :primary => true
 
 # Callbacks
 after "deploy:setup", "base_app:install_dependencies"
