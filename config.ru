@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'app.rb'
 
-path = ''
+path = '/'
 
 set :root, path
 set :views, path + '/views'

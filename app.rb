@@ -23,11 +23,10 @@ end
 
 get "/blog" do
   @posts = Blog.find(:all)
-  
   erb :blog, :locals => {:posts => @posts}
 end
 
 get "/blog_post/:id" do
-  @post = Blog.find(params[:id])
+  @posts = Blog.find(:all)
   erb :blog_post, :locals => {:post => @post}
 end
