@@ -1,9 +1,7 @@
 #========================
 #CONFIG
 #========================
-server "hcirack", :app, :web, :db, :primary => true
 set :user, "rails"
-set :owner, "rails"
 set :base_folder, "iphoneapps"
 set :app_name, "sinatra_base"
 
@@ -16,6 +14,9 @@ set :deploy_to, "/var/www/#{base_folder}/#{app_name}"
 set :ssh_options, { :forward_agent => true }
 set :use_sudo, true
 
+set :port "9191"
+
+server "209.41.75.6", :app, :web, :db, :primary => true
 
 # Callbacks
 after "deploy:setup", "base_app:install_dependencies"
