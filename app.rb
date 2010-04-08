@@ -1,7 +1,14 @@
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/sinatra/lib'
+
 require "rubygems"
 require "sinatra"
-require 'dm-core'
 require 'sinatra/activerecord'
+require 'paperclip'
+
+# Env Settings
+Time.zone = "Pacific Time (US & Canada)"
+ActiveRecord::Base.time_zone_aware_attributes = true
+ActiveRecord::Base.default_timezone = "Pacific Time (US & Canada)"
 
 # Set DB connection
 
@@ -10,35 +17,31 @@ require 'sinatra/activerecord'
       :adapter => 'mysql',
       :username => 'root',
       :password => '',
-      :database => 'hci_development',
+      :database => 'cube_development',
       :host => 'localhost',
       :encoding => 'utf8'
     )
   end
-  
-  # DataMapper.setup(:default, {
-  #    :adapter  => 'mysql',
-  #    :database => "hci_development",
-  #    :username => 'root',
-  #    :password => '',
-  #    :host     => 'localhost'
-  #  })
-  
 
 # Establish the Object
-  class Service < ActiveRecord::Base
-    
-  end
-
-# App Routes
-
-  get "/" do
-    @services = Service.all
-    erb :home, :locals => {:services => @services}
+  class Blog < ActiveRecord::Base
+    has_many :assets, :as => :attachable
   end
   
-  get "/service/:id" do
-    @service = Service.find(params[:id])
-    erb :service, :locals => {:s => @service}
+  class Asset < ActiveRecord::Base
+    belongs_to :attachable, :polymorphic => true
   end
-  
+
+get "/" do
+  erb :home
+end
+
+get "/blog" do
+  @posts = Blog.all
+  erb :blog, :locals => {:posts => @posts}
+end
+
+get "/blog_post/:id" do
+  @post = Blog.find(params[:id])
+  erb :blog_post, :locals => {:post => @post}
+end

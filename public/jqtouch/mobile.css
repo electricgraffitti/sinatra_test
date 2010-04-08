@@ -1,0 +1,30 @@
+.metal_header {
+	font-size: 14px;
+	color: #890001;
+}
+.metal_sub_header {
+	font-size: 12px;
+	color: #333;
+}
+.blog_post_wrap {
+	background: #efefef;
+	font-size: 12px;
+	color: #000;
+	padding: 10px;
+}
+.blog_post_wrap .header {
+	font-size: 13px;
+	color: #890001;
+	font-weight: bold;
+	margin-bottom: 3px;
+}
+.blog_post_wrap .sub_header {
+	font-size: 11px;
+	color: #999;
+	margin-bottom: 3px;
+}
+.blog_post_wrap .header_date {
+	font-size: 11px;
+	color: #ccc;
+	margin-bottom: 3px;
+}

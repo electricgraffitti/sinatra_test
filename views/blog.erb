@@ -1,0 +1,22 @@
+<div class='current' id='blog'>
+  <div class='toolbar'>
+    <h1>Blog Posts</h1>
+    <a class="back">Back</a>
+  </div>
+  <ul class='metal'>
+    <% posts.each do |post| %>
+      <li class="arrow">
+        <a href="/blog_post/<%= post.id %>">
+          <img src="http://www.cube2media.com/assets/<%= post.id %>/tiny_<%= post.assets.first.attachment_file_name %>" />
+          <div class="metal_header"><%= post.title %></div>
+          <div class="metal_sub_header"><%= post.sub_title %></div>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+  <div class='info'>
+    <p>
+      Built by Cube2Mobile - A Cube2Media Company
+    </p>
+  </div>
+</div>
