@@ -3,7 +3,6 @@ $LOAD_PATH.unshift File.dirname(__FILE__) + '/sinatra/lib'
 require "rubygems"
 require "sinatra"
 require 'active_resource'
-require 'paperclip'
 
 # Env Settings
 # Time.zone = "Pacific Time (US & Canada)"

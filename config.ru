@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'app.rb'
+
 path = ''
 
 set :root, path
