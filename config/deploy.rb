@@ -14,7 +14,7 @@ set :deploy_to, "/var/www/#{base_folder}/#{app_name}"
 set :ssh_options, { :forward_agent => true }
 set :use_sudo, true
 
-set :port "9191"
+set :port, "9191"
 
 server "209.41.75.6", :app, :web, :db, :primary => true
 
