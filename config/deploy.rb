@@ -4,7 +4,7 @@
 set :user, "rails"
 set :base_folder, "iphoneapps"
 set :app_name, "sinatra_base"
-set :domain, "articles.hciapps.com"
+set :domain, "hcirack"
 
 set :scm, :git
 set :repository, "git@github.com:electricgraffitti/sinatra_test.git"
