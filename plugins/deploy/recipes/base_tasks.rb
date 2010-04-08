@@ -33,7 +33,6 @@ namespace :base_app do
   task :set_post_deploy_ownership do
     sudo "chown -R #{user}:#{user} #{deploy_to}"
     sudo "chown -R #{user}:#{user} #{deploy_to}/shared"
-    sudo "chown -R #{user}:#{user} #{deploy_to}/shared/config"
     sudo "chown -R #{user}:#{user} #{deploy_to}/releases"
   end
 
