@@ -13,7 +13,7 @@ set :branch, "master"
 set :deploy_to, "/var/www/#{base_folder}/#{app_name}"
 
 set :ssh_options, { :forward_agent => true }
-set :use_sudo, true
+set :use_sudo, false
 
 # set :port, "9191"
 
@@ -26,16 +26,8 @@ after "deploy:setup", "base_app:set_permissions"
 #========================
 #CUSTOM
 #========================
-namespace :deploy do
-  
-  task :start, :roles => :app do
-    run "touch #{current_release}/tmp/restart.txt"
+namespace :deploy do 
+  task :restart, :roles => :app do
+    run "mkdir -p #{release_path}/tmp && touch #{release_path}/tmp/restart.txt"
   end
-  task :stop, :roles => :app do
-  # Do nothing.
-  end
-  desc "Restart Application"
-    task :restart, :roles => :app do
-      run "touch #{current_release}/tmp/restart.txt"
-    end
 end
